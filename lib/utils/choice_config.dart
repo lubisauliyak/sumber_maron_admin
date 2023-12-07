@@ -1,15 +1,10 @@
-import 'package:flutter/material.dart';
-
-final Map<String, Color> statusTextColor = {
-  'Lunas': Colors.blue,
-  'Belum Lunas': Colors.orange,
-  'Menunggu Pembayaran': Colors.red,
-};
+import 'package:intl/intl.dart';
+import 'package:official_sumbermaron/utils/decoration_config.dart';
 
 final Map<String, dynamic> statusBorderColor = {
-  'Lunas': Colors.cyan[100],
-  'Belum Lunas': Colors.yellow[100],
-  'Menunggu Pembayaran': Colors.orange[100],
+  'Lunas': kGreenColor,
+  'Belum Lunas': kRedColor,
+  'Menunggu Pembayaran': kOrangeColor,
 };
 
 final List<String> dayID = [
@@ -36,3 +31,25 @@ final List<String> monthID = [
   'November',
   'Desember'
 ];
+
+String formatTanggalIndonesia(String inputTanggal) {
+  DateTime parsedTanggal = DateTime.parse(inputTanggal);
+
+  String hari = dayID[parsedTanggal.weekday - 1];
+  String tanggal = parsedTanggal.day.toString();
+  String bulan = monthID[parsedTanggal.month - 1];
+  String tahun = parsedTanggal.year.toString();
+  String formattedTanggal = '$hari, $tanggal $bulan $tahun';
+
+  return formattedTanggal;
+}
+
+String formatRupiah(String inputBayar) {
+  NumberFormat currencyFormatter = NumberFormat.currency(
+    locale: 'id_ID',
+    symbol: 'Rp ',
+    decimalDigits: 0,
+  );
+
+  return currencyFormatter.format(int.parse(inputBayar));
+}

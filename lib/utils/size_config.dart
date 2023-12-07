@@ -15,7 +15,7 @@ class SizeConfig {
 }
 
 // Get the proportionate height as per screen size
-double getProportionateHeight(double inputHeight) {
+double getHeight(double inputHeight) {
   double screenHeight = SizeConfig.screenHeight;
   double proportionateHeight;
   // 872 is the layout height that designer use
@@ -31,7 +31,7 @@ double getProportionateHeight(double inputHeight) {
 }
 
 // Get the proportionate width as per screen size
-double getProportionateWidth(double inputWidth) {
+double getWidth(double inputWidth) {
   double screenWidth = SizeConfig.screenWidth;
   double proportionateWidth;
   // 390 is the layout width that designer use
@@ -44,20 +44,4 @@ double getProportionateWidth(double inputWidth) {
     proportionateWidth = inputWidth;
   }
   return proportionateWidth;
-}
-
-// Get the proportionate text
-double getProportionateText(double inputTextSize) {
-  double screenWidth = SizeConfig.screenWidth;
-  double proportionateText;
-  // 390 is the layout width that designer use
-  double layoutWidthDesigner = 390.0;
-  if (screenWidth < layoutWidthDesigner) {
-    proportionateText = (inputTextSize / 16) * (screenWidth / 24);
-  } else if (screenWidth > layoutWidthDesigner * 1.2) {
-    proportionateText = inputTextSize * 1.1;
-  } else {
-    proportionateText = inputTextSize;
-  }
-  return proportionateText;
 }

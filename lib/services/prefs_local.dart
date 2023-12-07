@@ -20,17 +20,3 @@ class SPHelper {
     return await prefs!.remove(key);
   }
 }
-
-bool loadRemember() {
-  bool isRemember = false;
-  var dataUser = SPHelper.sp.get('dataUser');
-  if (dataUser != null) {
-    isRemember = true;
-  }
-  return isRemember;
-}
-
-void logoutUser() {
-  SPHelper.sp.delete('dataUser');
-  return;
-}
