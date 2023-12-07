@@ -6,27 +6,47 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.0.3 <4.0.0"
+  sdk: ">=3.2.1 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  simple_shadow: ^0.3.1
+  carousel_slider: ^4.2.1
+  awesome_dialog: ^3.1.0
+  pretty_qr_code: ^2.0.3
+
   intl: ^0.17.0
   http : ^1.0.0
   crypto: ^3.0.3
+  url_launcher: ^6.1.14
   shared_preferences: ^2.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^2.0.0
+  launcher_name: ^1.0.2
+  flutter_launcher_icons: "^0.13.1"
+
+launcher_name:
+  default: "Official Sumber Maron"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path: "assets/images/smlogo.png"
+  web:
+    generate: true
+    image_path: "assets/images/smlogo.png"
+  windows:
+    generate: true
+    image_path: "assets/images/smlogo.png"
 
 flutter:
   uses-material-design: true
-
-assets:
-  - assets/images/
-  - assets/icons/
+  
+  assets:
+    - assets/
+    - assets/images/
