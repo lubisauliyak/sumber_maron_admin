@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Column(
               children: [
-                Text('Didukung oleh: ',
+                const Text('Didukung oleh: ',
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 SizedBox(height: getHeight(10)),
                 Row(

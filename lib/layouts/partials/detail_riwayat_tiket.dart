@@ -32,13 +32,13 @@ class DetailRiwayatTiket extends StatelessWidget {
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => MainScreen(pilihScreen: 1)));
+                  builder: (context) => const MainScreen(pilihScreen: 1)));
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Detail Riwayat Tiket',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -92,43 +92,43 @@ class DetailRiwayatTiket extends StatelessWidget {
                           color: kGreyColor.withOpacity(0.2),
                           spreadRadius: 1,
                           blurRadius: 1,
-                          offset: Offset(0, 0),
+                          offset: const Offset(0, 0),
                         ),
                       ],
                     ),
                     child: Column(
                       children: [
                         SizedBox(height: getHeight(20)),
-                        Container(
+                        SizedBox(
                           width: double.infinity,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 'Tiket Wisata Sumber Maron',
                                 style: TextStyle(
                                     color: kPrimaryColor,
                                     fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: getHeight(15)),
-                              Text('Nama Pemesan',
+                              const Text('Nama Pemesan',
                                   style: TextStyle(color: kGreyColor)),
                               SizedBox(height: getHeight(3)),
                               Text(dataPengguna['nama'],
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold)),
                               SizedBox(height: getHeight(15)),
-                              Text('Tanggal',
+                              const Text('Tanggal',
                                   style: TextStyle(color: kGreyColor)),
                               SizedBox(height: getHeight(3)),
                               Text(formatTanggalIndonesia(tanggalBooking),
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold)),
                               SizedBox(height: getHeight(15)),
-                              Text('Jam Operasional',
+                              const Text('Jam Operasional',
                                   style: TextStyle(color: kGreyColor)),
                               SizedBox(height: getHeight(3)),
-                              Text('08:00-17:00 WIB',
+                              const Text('08:00-17:00 WIB',
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             ],
@@ -143,23 +143,23 @@ class DetailRiwayatTiket extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Jumlah Pengunjung',
+                                const Text('Jumlah Pengunjung',
                                     style: TextStyle(color: kGreyColor)),
                                 SizedBox(height: getHeight(3)),
                                 Text('$jumlahPengunjung Orang',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
                               ],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text('Jumlah Tiket',
+                                const Text('Jumlah Tiket',
                                     style: TextStyle(color: kGreyColor)),
                                 SizedBox(height: getHeight(3)),
                                 Text('$jumlahTiket Tiket',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
                               ],
                             )
                           ],
@@ -171,23 +171,23 @@ class DetailRiwayatTiket extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Metode Pembayaran',
+                                const Text('Metode Pembayaran',
                                     style: TextStyle(color: kGreyColor)),
                                 SizedBox(height: getHeight(3)),
                                 Text(metodeBayar,
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
                               ],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text('Total Bayar',
+                                const Text('Total Bayar',
                                     style: TextStyle(color: kGreyColor)),
                                 SizedBox(height: getHeight(3)),
                                 Text(formatRupiah(totalBayar),
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
                               ],
                             )
                           ],
@@ -203,7 +203,7 @@ class DetailRiwayatTiket extends StatelessWidget {
                 ? Container(
                     width: double.infinity,
                     height: 50,
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -215,14 +215,14 @@ class DetailRiwayatTiket extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: kPrimaryColor),
-                      child: Text(
+                      child: const Text(
                         'Pesan Ulang',
                         style: TextStyle(
                             color: kWhiteColor, fontWeight: FontWeight.bold),
                       ),
                     ),
                   )
-                : SizedBox(width: 0),
+                : const SizedBox(width: 0),
             SizedBox(height: getHeight(50))
           ],
         ),
@@ -234,9 +234,6 @@ class DetailRiwayatTiket extends StatelessWidget {
     DateTime bookingDate = DateTime.parse(tanggalBooking);
     DateTime currentDate =
         DateTime.parse(DateFormat('yyyy-MM-dd').format(DateTime.now()));
-    print(currentDate);
-    print(tanggalBooking);
-
     if (currentDate.isAfter(bookingDate)) {
       return false;
     } else {

@@ -55,11 +55,11 @@ class _EditProfilState extends State<EditProfil> {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
                   builder: (context) => const MainScreen(pilihScreen: 2)));
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Edit Profil',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -77,11 +77,11 @@ class _EditProfilState extends State<EditProfil> {
                 children: [
                   SizedBox(height: getHeight(30)),
                   Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Nama Lengkap',
                             style: TextStyle(color: kPrimaryColor),
                           ),
@@ -89,7 +89,7 @@ class _EditProfilState extends State<EditProfil> {
                           TextField(
                             controller: _controllerNama,
                             keyboardType: TextInputType.name,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Masukkan nama lengkap anda',
                               suffixIcon: Icon(CupertinoIcons.person),
                             ),
@@ -107,11 +107,11 @@ class _EditProfilState extends State<EditProfil> {
                       )),
                   SizedBox(height: getHeight(20)),
                   Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'No Telepon',
                             style: TextStyle(color: kPrimaryColor),
                           ),
@@ -119,7 +119,7 @@ class _EditProfilState extends State<EditProfil> {
                           TextField(
                             controller: _controllerTelepon,
                             keyboardType: TextInputType.phone,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Masukkan no telepon anda',
                               suffixIcon:
                                   Icon(CupertinoIcons.device_phone_portrait),
@@ -138,11 +138,11 @@ class _EditProfilState extends State<EditProfil> {
                       )),
                   SizedBox(height: getHeight(20)),
                   Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'E-mail',
                             style: TextStyle(color: kPrimaryColor),
                           ),
@@ -150,7 +150,7 @@ class _EditProfilState extends State<EditProfil> {
                           TextField(
                             controller: _controllerEmail,
                             keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Masukkan e-mail anda',
                               suffixIcon: Icon(CupertinoIcons.mail),
                             ),
@@ -171,7 +171,7 @@ class _EditProfilState extends State<EditProfil> {
                     margin: EdgeInsets.only(top: getHeight(30)),
                     child: Text(
                       textMessage ?? '',
-                      style: TextStyle(color: kRedColor),
+                      style: const TextStyle(color: kRedColor),
                     ),
                   )
                 ],
@@ -180,7 +180,7 @@ class _EditProfilState extends State<EditProfil> {
             Container(
               width: double.infinity,
               height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
                 onPressed: (isNama && isTelepon && isEmail)
                     ? () {
@@ -213,7 +213,7 @@ class _EditProfilState extends State<EditProfil> {
                       }
                     : null,
                 style: ElevatedButton.styleFrom(backgroundColor: kPrimaryColor),
-                child: Text(
+                child: const Text(
                   'Simpan Profil',
                   style: TextStyle(
                       color: kWhiteColor, fontWeight: FontWeight.bold),

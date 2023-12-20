@@ -21,15 +21,15 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
   }
 
   List<Widget> riwayat = [
-    TiketAktif(),
-    RiwayatTiket(),
+    const TiketAktif(),
+    const RiwayatTiket(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tiket', style: TextStyle(color: kWhiteColor)),
+        title: const Text('Tiket', style: TextStyle(color: kWhiteColor)),
         backgroundColor: kPrimaryColor,
       ),
       body: SafeArea(
@@ -54,7 +54,7 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
                     child: Container(
                         alignment: Alignment.center,
                         height: 50,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text('Tiket Aktif',
                             style: TextStyle(
                                 color: _selectedRiwayat == 0
@@ -76,7 +76,7 @@ class _RiwayatScreenState extends State<RiwayatScreen> {
                     child: Container(
                         alignment: Alignment.center,
                         height: 50,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text('Riwayat Tiket',
                             style: TextStyle(
                                 color: _selectedRiwayat == 1

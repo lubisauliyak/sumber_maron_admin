@@ -33,13 +33,13 @@ class _PusatBantuanState extends State<PusatBantuan> {
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => MainScreen(pilihScreen: 2)));
+                  builder: (context) => const MainScreen(pilihScreen: 2)));
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Pusat Bantuan',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -60,7 +60,7 @@ class _PusatBantuanState extends State<PusatBantuan> {
                     height: 160,
                     color: kPrimaryColor,
                     alignment: Alignment.center,
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('Halo, ada yang bisa kami bantu?',
@@ -79,8 +79,8 @@ class _PusatBantuanState extends State<PusatBantuan> {
                       top: 120,
                       child: Container(
                         height: 80,
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         decoration: BoxDecoration(
                             color: kWhiteColor,
                             borderRadius: BorderRadius.circular(10),
@@ -98,13 +98,13 @@ class _PusatBantuanState extends State<PusatBantuan> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Icon(
+                            const Icon(
                               CupertinoIcons.person_circle,
                               color: kPrimaryColor,
                               size: 50,
                             ),
                             SizedBox(width: getWidth(10)),
-                            Column(
+                            const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -124,13 +124,13 @@ class _PusatBantuanState extends State<PusatBantuan> {
                                 _openWhatsApp();
                               },
                               child: Container(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 15, vertical: 5),
                                 decoration: BoxDecoration(
                                     color: kWhiteColor,
                                     border: Border.all(color: kPrimaryColor),
                                     borderRadius: BorderRadius.circular(10)),
-                                child: Text(
+                                child: const Text(
                                   'CHAT',
                                   style: TextStyle(color: kPrimaryColor),
                                 ),
@@ -145,14 +145,14 @@ class _PusatBantuanState extends State<PusatBantuan> {
             SizedBox(height: getHeight(20)),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Text('Pertanyaan Populer',
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: const Text('Pertanyaan Populer',
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             SizedBox(height: getHeight(20)),
             Container(
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: kWhiteColor,
                 border: Border.all(color: kGreyColor),
@@ -169,8 +169,8 @@ class _PusatBantuanState extends State<PusatBantuan> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.all(15),
-                      margin: EdgeInsets.only(right: 5),
+                      padding: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.only(right: 5),
                       child: Column(
                         children: [
                           Row(
@@ -178,9 +178,9 @@ class _PusatBantuanState extends State<PusatBantuan> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                padding: EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 10),
                                 width: getWidth(260),
-                                child: Text(
+                                child: const Text(
                                     'Mengapa harga wekeend dan weekday berbeda?',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -192,14 +192,15 @@ class _PusatBantuanState extends State<PusatBantuan> {
                           ),
                           isQuest1
                               ? Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Text(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  margin: const EdgeInsets.only(top: 10),
+                                  child: const Text(
                                     'Berdasarkan penetapan peraturan Badan Usaha Milik Desa (BUMDES) Karangsuko adanya pembedaan harga untuk hari kerja sebesar Rp 5.000/tiket. Sedangkan pada hari libur dan akhir pekan sebesar Rp 10.000/tiket.',
                                     textAlign: TextAlign.justify,
                                   ),
                                 )
-                              : SizedBox(width: 0),
+                              : const SizedBox(width: 0),
                         ],
                       ),
                     ),
@@ -217,8 +218,8 @@ class _PusatBantuanState extends State<PusatBantuan> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.all(15),
-                      margin: EdgeInsets.only(right: 5),
+                      padding: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.only(right: 5),
                       child: Column(
                         children: [
                           Row(
@@ -226,9 +227,9 @@ class _PusatBantuanState extends State<PusatBantuan> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                padding: EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 10),
                                 width: getWidth(260),
-                                child: Text(
+                                child: const Text(
                                     'Bagaimana cara melakukan pembayaran non tunai?',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -240,9 +241,10 @@ class _PusatBantuanState extends State<PusatBantuan> {
                           ),
                           isQuest2
                               ? Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Column(children: [
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  margin: const EdgeInsets.only(top: 10),
+                                  child: const Column(children: [
                                     Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -361,7 +363,7 @@ class _PusatBantuanState extends State<PusatBantuan> {
                                     ),
                                   ]),
                                 )
-                              : SizedBox(width: 0),
+                              : const SizedBox(width: 0),
                         ],
                       ),
                     ),
@@ -379,8 +381,8 @@ class _PusatBantuanState extends State<PusatBantuan> {
                       });
                     },
                     child: Container(
-                      padding: EdgeInsets.all(15),
-                      margin: EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.only(right: 10),
                       child: Column(
                         children: [
                           Row(
@@ -388,9 +390,9 @@ class _PusatBantuanState extends State<PusatBantuan> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                padding: EdgeInsets.only(left: 10),
+                                padding: const EdgeInsets.only(left: 10),
                                 width: getWidth(260),
-                                child: Text(
+                                child: const Text(
                                     'Adakah perbedaan tiket tunai dengan tiket non tunai?',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
@@ -402,12 +404,13 @@ class _PusatBantuanState extends State<PusatBantuan> {
                           ),
                           isQuest3
                               ? Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Text(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
+                                  margin: const EdgeInsets.only(top: 10),
+                                  child: const Text(
                                       'Kedua tiket tersebut memiliki perbedaan pada proses pembayaran. Apabila tiket tunai Anda dapat melakukan pesan saja dan pembayaran tetap secara langsung pada loket Sumber Maron. Namun, apabila non tunai Anda dapat melakukan pesan dan pembayaran secara lunas melalui pembayaran digital yang disediakan.\nSelain itu, terdapat perbedaan label status pada halaman tiket aktif, dimana tiket tunai memiliki label “Belum Lunas”, dan tiket non tunai yang sudah melakukan pembayaran memiliki label “Lunas”.',
                                       textAlign: TextAlign.justify))
-                              : SizedBox(width: 0),
+                              : const SizedBox(width: 0),
                         ],
                       ),
                     ),

@@ -23,7 +23,7 @@ class _AkunScreenState extends State<AkunScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Akun',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -35,13 +35,13 @@ class _AkunScreenState extends State<AkunScreen> {
           children: [
             SizedBox(height: getHeight(30)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     dataPengguna['nama'],
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: sizeTitle, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: getHeight(10)),
@@ -51,13 +51,13 @@ class _AkunScreenState extends State<AkunScreen> {
                           builder: (context) => const EditProfil()));
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
                           color: kWhiteColor,
                           border: Border.all(color: kPrimaryColor),
                           borderRadius: BorderRadius.circular(10)),
-                      child: Text(
+                      child: const Text(
                         'Edit Profil',
                         style: TextStyle(
                             color: kBlackColor, fontWeight: FontWeight.bold),
@@ -69,25 +69,25 @@ class _AkunScreenState extends State<AkunScreen> {
             ),
             SizedBox(height: getHeight(50)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Akun Anda',
                     style: TextStyle(
                         color: kGreyColor, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   InkWell(
                     onTap: () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => const DetailProfil()));
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 20),
-                      child: Row(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 20),
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -110,25 +110,25 @@ class _AkunScreenState extends State<AkunScreen> {
             ),
             SizedBox(height: getHeight(20)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Info dan Dukungan',
                     style: TextStyle(
                         color: kGreyColor, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const Tentang()));
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 20),
-                      child: Row(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 20),
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -153,9 +153,9 @@ class _AkunScreenState extends State<AkunScreen> {
                           builder: (context) => const PusatBantuan()));
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 20),
-                      child: Row(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 20),
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -179,16 +179,16 @@ class _AkunScreenState extends State<AkunScreen> {
             ),
             SizedBox(height: getHeight(20)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Login',
                     style: TextStyle(
                         color: kGreyColor, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   InkWell(
                     onTap: () {
                       showDialog(
@@ -201,13 +201,13 @@ class _AkunScreenState extends State<AkunScreen> {
                                 decoration: BoxDecoration(
                                     color: kWhiteColor,
                                     borderRadius: BorderRadius.circular(20)),
-                                child: Text('Keluar dari akun?',
+                                child: const Text('Keluar dari akun?',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
                               ),
                               actions: [
                                 CupertinoDialogAction(
-                                  child: Text(
+                                  child: const Text(
                                     'Keluar',
                                     style: TextStyle(
                                         color: kRedColor,
@@ -222,7 +222,7 @@ class _AkunScreenState extends State<AkunScreen> {
                                   },
                                 ),
                                 CupertinoDialogAction(
-                                  child: Text(
+                                  child: const Text(
                                     'Batalkan',
                                     style: TextStyle(
                                         color: kBlackColor,
@@ -237,14 +237,14 @@ class _AkunScreenState extends State<AkunScreen> {
                           });
                     },
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 5, vertical: 20),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 5, vertical: 20),
                       child: Row(
                         children: [
-                          Icon(Icons.logout_rounded, color: kRedColor),
-                          SizedBox(width: 15),
+                          const Icon(Icons.logout_rounded, color: kRedColor),
+                          const SizedBox(width: 15),
                           Text('Keluar dari ${dataPengguna['nama']}',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: kRedColor,
                                   fontWeight: FontWeight.bold))
                         ],

@@ -16,8 +16,8 @@ class JalurLokasi extends StatefulWidget {
 
 class _JalurLokasiState extends State<JalurLokasi> {
   Future<void> _openGoogleMaps(String urlMaps) async {
-    final Uri _url = Uri.parse(urlMaps);
-    if (!await launchUrl(_url)) {
+    final Uri url = Uri.parse(urlMaps);
+    if (!await launchUrl(url)) {
       throw Exception('Tidak dapat membuka Google Maps');
     }
   }
@@ -55,13 +55,13 @@ class _JalurLokasiState extends State<JalurLokasi> {
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => MainScreen()));
+                  MaterialPageRoute(builder: (context) => const MainScreen()));
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Info Lokasi Parkir',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -77,7 +77,7 @@ class _JalurLokasiState extends State<JalurLokasi> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Pilih Transaportasi'),
+                const Text('Pilih Transaportasi'),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -236,7 +236,7 @@ class _JalurLokasiState extends State<JalurLokasi> {
                       color: kGreyColor.withOpacity(.2),
                       blurRadius: 1,
                       spreadRadius: 1,
-                      offset: Offset(0, 0),
+                      offset: const Offset(0, 0),
                     )
                   ],
                 ),

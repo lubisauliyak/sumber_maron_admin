@@ -197,7 +197,7 @@ class HttpApi {
     String hargaTiket,
     String weekTiket,
     String totalBayar,
-    String promo,
+    String namaPromo,
   ) async {
     Uri url = Uri.parse('https://app.sumbermaron.site/v1.2/postUser');
     var dataPengguna = muatAkun();
@@ -213,6 +213,7 @@ class HttpApi {
       'hargaTiket': hargaTiket,
       'weekTiket': weekTiket,
       'totalBayar': totalBayar,
+      'namaPromo': namaPromo,
     };
 
     var hasilResponse = await http.post(url, body: json.encode(requestData));

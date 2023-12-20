@@ -14,11 +14,11 @@ class Tentang extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Tentang',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -40,20 +40,20 @@ class Tentang extends StatelessWidget {
             Container(
                 padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                 alignment: Alignment.centerLeft,
-                child: Text('Sumber Maron',
+                child: const Text('Sumber Maron',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: sizeTitle))),
             SizedBox(height: getHeight(20)),
             Container(
                 padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                 alignment: Alignment.centerLeft,
-                child: Text(
+                child: const Text(
                     'Wisata Sumber Maron menawarkan wisata alam ala pedesaan di Malang yang masih asri dimana terdapat arung jeram, susur sungai dengan ban dan berenang melewati area alam yang dilindungi. Selain berenang, pengunjung juga dapat mencoba wahana Flying Fox dan Terapi Ikan yang sangat bermanfaat bagi kesehatan, serta dilengkapi kafe dengan berbagai macam makanan.',
                     textAlign: TextAlign.justify)),
             SizedBox(height: getHeight(20)),
             Container(
               padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Syarat dan Ketentuan',
@@ -108,7 +108,7 @@ class Tentang extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30)
+            const SizedBox(height: 30)
           ],
         ),
       )),

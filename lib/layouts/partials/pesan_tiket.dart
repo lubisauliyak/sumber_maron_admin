@@ -124,17 +124,17 @@ class _PesanTiketState extends State<PesanTiket> {
                           decoration: BoxDecoration(
                               color: kWhiteColor,
                               borderRadius: BorderRadius.circular(20)),
-                          child: Text('Keluar halaman ini?',
+                          child: const Text('Keluar halaman ini?',
                               style: TextStyle(fontWeight: FontWeight.bold)),
                         ),
                         content: Column(children: [
                           SizedBox(height: getHeight(10)),
-                          Text(
+                          const Text(
                               'Data pengisian tiket Anda saat ini tidak akan disimpan.')
                         ]),
                         actions: [
                           CupertinoDialogAction(
-                            child: Text(
+                            child: const Text(
                               'Lanjutkan pengisian data',
                               style: TextStyle(
                                   color: kPrimaryColor,
@@ -145,7 +145,7 @@ class _PesanTiketState extends State<PesanTiket> {
                             },
                           ),
                           CupertinoDialogAction(
-                            child: Text(
+                            child: const Text(
                               'Keluar',
                               style: TextStyle(
                                   color: kRedColor,
@@ -166,11 +166,11 @@ class _PesanTiketState extends State<PesanTiket> {
                     builder: (context) => const MainScreen()));
               }
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Form Pengisian Tiket',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -182,7 +182,7 @@ class _PesanTiketState extends State<PesanTiket> {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const Tentang()));
               },
-              icon: Icon(
+              icon: const Icon(
                 CupertinoIcons.info_circle_fill,
                 color: kWhiteColor,
               )),
@@ -194,23 +194,23 @@ class _PesanTiketState extends State<PesanTiket> {
         child: Column(
           children: [
             SizedBox(height: getHeight(30)),
-            Text('RENCANAKAN DAN',
+            const Text('RENCANAKAN DAN',
                 style: TextStyle(
                     color: kPrimaryColor,
                     fontSize: sizeTitle,
                     fontWeight: FontWeight.bold)),
-            Text('PESAN TIKETMU!',
+            const Text('PESAN TIKETMU!',
                 style: TextStyle(
                     color: kPrimaryColor,
                     fontSize: sizeTitle,
                     fontWeight: FontWeight.bold)),
             SizedBox(height: getHeight(40)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 readOnly: true,
                 controller: _controllerTanggal,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     labelText: 'Tanggal Pembelian',
                     hintText: 'Pilih tanggal pembelian',
                     suffixIcon: Icon(CupertinoIcons.calendar)),
@@ -253,11 +253,11 @@ class _PesanTiketState extends State<PesanTiket> {
             ),
             SizedBox(height: getHeight(30)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                   controller: _controllerPengunjung,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Jumlah Pengunjung',
                       hintText: 'Masukkan jumlah pengunjung',
                       suffixIcon: Icon(CupertinoIcons.person_3)),
@@ -317,7 +317,7 @@ class _PesanTiketState extends State<PesanTiket> {
                         top: getHeight(3), bottom: getHeight(15)),
                     padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                     child: Text(pesanInputTiket,
-                        style: TextStyle(fontSize: sizeDescription)))
+                        style: const TextStyle(fontSize: sizeDescription)))
                 : SizedBox(
                     height: getHeight(30),
                   ),
@@ -325,24 +325,25 @@ class _PesanTiketState extends State<PesanTiket> {
               margin: EdgeInsets.symmetric(horizontal: getWidth(20)),
               child: DropdownButtonFormField(
                 value: jenisPembayaran,
-                hint: Text('Pilih jenis pembayaran'),
+                hint: const Text('Pilih jenis pembayaran'),
                 onChanged: (String? newValue) {
                   setState(() {
                     jenisPembayaran = newValue;
                   });
                 },
-                items: [
+                items: const [
                   DropdownMenuItem<String>(
                       value: 'Tunai', child: Text('Tunai')),
                   DropdownMenuItem<String>(
                       value: 'Non Tunai', child: Text('Non Tunai'))
                 ],
-                decoration: InputDecoration(labelText: 'Jenis Pembayaran'),
+                decoration:
+                    const InputDecoration(labelText: 'Jenis Pembayaran'),
               ),
             ),
             namaPromo != ''
                 ? Container(
-                    margin: EdgeInsets.only(top: 15, bottom: 3),
+                    margin: const EdgeInsets.only(top: 15, bottom: 3),
                     padding: EdgeInsets.symmetric(horizontal: getWidth(30)),
                     child: GestureDetector(
                       onTap: () {
@@ -352,9 +353,10 @@ class _PesanTiketState extends State<PesanTiket> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text('Batalkan Promo $namaPromo ',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: kRedColor, fontSize: sizeDescription)),
-                          Icon(CupertinoIcons.trash, size: 15, color: kRedColor)
+                          const Icon(CupertinoIcons.trash,
+                              size: 15, color: kRedColor)
                         ],
                       ),
                     ))
@@ -371,7 +373,7 @@ class _PesanTiketState extends State<PesanTiket> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Jumlah Pengunjung:'),
+                    const Text('Jumlah Pengunjung:'),
                     Text('$jumlahPengunjung Orang'),
                   ],
                 ),
@@ -384,7 +386,7 @@ class _PesanTiketState extends State<PesanTiket> {
                     Text(
                       diskonTiket == '0'
                           ? 'Tidak ada diskon'
-                          : '-${diskonTiket} Tiket',
+                          : '-$diskonTiket Tiket',
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: kRedColor,
@@ -400,7 +402,7 @@ class _PesanTiketState extends State<PesanTiket> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Total Tiket:'),
+                    const Text('Total Tiket:'),
                     Text('$jumlahTiket Tiket'),
                   ],
                 ),
@@ -419,10 +421,10 @@ class _PesanTiketState extends State<PesanTiket> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Total Bayar:',
+                    const Text('Total Bayar:',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     Text(formatRupiah(totalBayar),
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
               ]),
@@ -431,7 +433,7 @@ class _PesanTiketState extends State<PesanTiket> {
             Container(
               width: double.infinity,
               height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
                 onPressed: (tanggalPembelian != null &&
                         jenisPembayaran != null &&
@@ -447,20 +449,20 @@ class _PesanTiketState extends State<PesanTiket> {
                                   decoration: BoxDecoration(
                                       color: kWhiteColor,
                                       borderRadius: BorderRadius.circular(20)),
-                                  child: Text('Pesan tiket?',
+                                  child: const Text('Pesan tiket?',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold)),
                                 ),
                                 content: Column(
                                   children: [
                                     SizedBox(height: getHeight(10)),
-                                    Text(
+                                    const Text(
                                         'Pastikan Anda sudah membaca syarat dan ketentuan untuk melanjutkan.'),
                                   ],
                                 ),
                                 actions: [
                                   CupertinoDialogAction(
-                                    child: Text(
+                                    child: const Text(
                                       'Lanjutkan',
                                       style: TextStyle(
                                           color: kPrimaryColor,
@@ -479,6 +481,11 @@ class _PesanTiketState extends State<PesanTiket> {
                                         namaPromo,
                                       ).then((value) {
                                         dataResponse = value;
+
+                                        if (namaPromo != '') {
+                                          HttpApi.dataBanner();
+                                        }
+
                                         if (dataResponse.textMessage ==
                                             'Pesan tiket berhasil') {
                                           Map<String, dynamic> dataTiket =
@@ -524,7 +531,7 @@ class _PesanTiketState extends State<PesanTiket> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(20)),
-                                                    child: Text(
+                                                    child: const Text(
                                                         'Bayar Non Tunai?',
                                                         style: TextStyle(
                                                             fontWeight:
@@ -534,12 +541,12 @@ class _PesanTiketState extends State<PesanTiket> {
                                                   content: Column(children: [
                                                     SizedBox(
                                                         height: getHeight(10)),
-                                                    Text(
+                                                    const Text(
                                                         'Pesan tiket berhasil, lakukan pembayaran Non Tunai')
                                                   ]),
                                                   actions: [
                                                     CupertinoDialogAction(
-                                                      child: Text(
+                                                      child: const Text(
                                                         'Bayar',
                                                         style: TextStyle(
                                                             color:
@@ -575,7 +582,7 @@ class _PesanTiketState extends State<PesanTiket> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(20)),
-                                                    child: Text(
+                                                    child: const Text(
                                                         'Pesan tiket gagal?',
                                                         style: TextStyle(
                                                             fontWeight:
@@ -585,12 +592,12 @@ class _PesanTiketState extends State<PesanTiket> {
                                                   content: Column(children: [
                                                     SizedBox(
                                                         height: getHeight(10)),
-                                                    Text(
+                                                    const Text(
                                                         'Pastikan data pesan tiket lengkap dan sedang terhubung internet.')
                                                   ]),
                                                   actions: [
                                                     CupertinoDialogAction(
-                                                      child: Text(
+                                                      child: const Text(
                                                         'Saya mengerti',
                                                         style: TextStyle(
                                                             color:
@@ -621,7 +628,7 @@ class _PesanTiketState extends State<PesanTiket> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               20)),
-                                                  child: Text(
+                                                  child: const Text(
                                                       'Koneksi internet?',
                                                       style: TextStyle(
                                                           fontWeight:
@@ -630,12 +637,12 @@ class _PesanTiketState extends State<PesanTiket> {
                                                 content: Column(children: [
                                                   SizedBox(
                                                       height: getHeight(10)),
-                                                  Text(
+                                                  const Text(
                                                       'Pastikan Anda sedang terhubung internet.')
                                                 ]),
                                                 actions: [
                                                   CupertinoDialogAction(
-                                                    child: Text(
+                                                    child: const Text(
                                                       'Saya mengerti',
                                                       style: TextStyle(
                                                           color: kPrimaryColor,
@@ -654,7 +661,7 @@ class _PesanTiketState extends State<PesanTiket> {
                                     },
                                   ),
                                   CupertinoDialogAction(
-                                    child: Text(
+                                    child: const Text(
                                       'Batal',
                                       style: TextStyle(
                                           color: kRedColor,
@@ -670,7 +677,7 @@ class _PesanTiketState extends State<PesanTiket> {
                       }
                     : null,
                 style: ElevatedButton.styleFrom(backgroundColor: kPrimaryColor),
-                child: Text('Pesan Sekarang',
+                child: const Text('Pesan Sekarang',
                     style: TextStyle(
                         color: kWhiteColor, fontWeight: FontWeight.bold)),
               ),
@@ -691,7 +698,7 @@ class _PesanTiketState extends State<PesanTiket> {
               padding: EdgeInsets.symmetric(vertical: getHeight(10)),
               decoration: BoxDecoration(
                   color: kWhiteColor, borderRadius: BorderRadius.circular(20)),
-              child: Text('Hapus promo?',
+              child: const Text('Hapus promo?',
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             content: Column(children: [
@@ -701,7 +708,7 @@ class _PesanTiketState extends State<PesanTiket> {
             ]),
             actions: [
               CupertinoDialogAction(
-                child: Text(
+                child: const Text(
                   'Lanjutkan promo',
                   style: TextStyle(
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
@@ -719,7 +726,7 @@ class _PesanTiketState extends State<PesanTiket> {
                 },
               ),
               CupertinoDialogAction(
-                child: Text(
+                child: const Text(
                   'Hapus',
                   style:
                       TextStyle(color: kRedColor, fontWeight: FontWeight.bold),
@@ -747,7 +754,7 @@ class _PesanTiketState extends State<PesanTiket> {
               padding: EdgeInsets.symmetric(vertical: getHeight(10)),
               decoration: BoxDecoration(
                   color: kWhiteColor, borderRadius: BorderRadius.circular(20)),
-              child: Text('Sesuaikan promo?',
+              child: const Text('Sesuaikan promo?',
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             content: Column(children: [
@@ -757,7 +764,7 @@ class _PesanTiketState extends State<PesanTiket> {
             ]),
             actions: [
               CupertinoDialogAction(
-                child: Text(
+                child: const Text(
                   'Ya, saya mengerti',
                   style: TextStyle(
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
@@ -780,7 +787,7 @@ class _PesanTiketState extends State<PesanTiket> {
               padding: EdgeInsets.symmetric(vertical: getHeight(10)),
               decoration: BoxDecoration(
                   color: kWhiteColor, borderRadius: BorderRadius.circular(20)),
-              child: Text('Hapus promo?',
+              child: const Text('Hapus promo?',
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             content: Column(children: [
@@ -789,7 +796,7 @@ class _PesanTiketState extends State<PesanTiket> {
             ]),
             actions: [
               CupertinoDialogAction(
-                child: Text(
+                child: const Text(
                   'Gunakan promo',
                   style: TextStyle(
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
@@ -799,7 +806,7 @@ class _PesanTiketState extends State<PesanTiket> {
                 },
               ),
               CupertinoDialogAction(
-                child: Text(
+                child: const Text(
                   'Hapus',
                   style:
                       TextStyle(color: kRedColor, fontWeight: FontWeight.bold),

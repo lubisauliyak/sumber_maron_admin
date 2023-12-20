@@ -60,7 +60,7 @@ class _RiwayatTiketState extends State<RiwayatTiket> {
         ? Column(
             children: [
               SizedBox(height: getHeight(30)),
-              Icon(CupertinoIcons.slash_circle),
+              const Icon(CupertinoIcons.slash_circle),
               SizedBox(height: getHeight(10)),
               Text(textMessage),
             ],
@@ -84,7 +84,6 @@ class RiwayatTiketItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(dataTiket);
     var jumlahPengunjung = dataTiket['jumlahPengunjung'];
     var totalBayar = dataTiket['totalBayar'];
     var tanggalBooking = dataTiket['tanggalBooking'];
@@ -155,11 +154,11 @@ class RiwayatTiketItem extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Jumlah Pengunjung:'),
+                      const Text('Jumlah Pengunjung:'),
                       SizedBox(height: getHeight(5)),
                       Text(
                         '$jumlahPengunjung Orang',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: kPrimaryColor, fontWeight: FontWeight.bold),
                       )
                     ],
@@ -167,11 +166,11 @@ class RiwayatTiketItem extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text('Total Bayar:'),
+                      const Text('Total Bayar:'),
                       SizedBox(height: getHeight(5)),
                       Text(
                         formatRupiah(totalBayar),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: kPrimaryColor, fontWeight: FontWeight.bold),
                       )
                     ],

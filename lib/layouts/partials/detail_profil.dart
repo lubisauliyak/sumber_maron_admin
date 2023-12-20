@@ -20,11 +20,11 @@ class DetailProfil extends StatelessWidget {
               Navigator.of(context).pushReplacement(MaterialPageRoute(
                   builder: (context) => const MainScreen(pilihScreen: 2)));
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Detail Profil',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -40,8 +40,8 @@ class DetailProfil extends StatelessWidget {
                 children: [
                   SizedBox(height: getHeight(30)),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                     decoration: BoxDecoration(
                         border: Border.all(color: kGreyColor),
                         borderRadius: BorderRadius.circular(20)),
@@ -72,14 +72,14 @@ class DetailProfil extends StatelessWidget {
             Container(
               width: double.infinity,
               height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const EditProfil()));
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: kPrimaryColor),
-                child: Text(
+                child: const Text(
                   'Edit Profil',
                   style: TextStyle(
                       color: kWhiteColor, fontWeight: FontWeight.bold),
@@ -95,11 +95,11 @@ class DetailProfil extends StatelessWidget {
 
   Widget buildDataProfil(String label, String value, IconData iconData) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: TextStyle(color: kPrimaryColor)),
+          Text(label, style: const TextStyle(color: kPrimaryColor)),
           SizedBox(height: getHeight(5)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

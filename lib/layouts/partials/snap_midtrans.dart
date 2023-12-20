@@ -122,17 +122,17 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                               decoration: BoxDecoration(
                                   color: kWhiteColor,
                                   borderRadius: BorderRadius.circular(20)),
-                              child: Text('Keluar halaman ini?',
+                              child: const Text('Keluar halaman ini?',
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             ),
                             content: Column(children: [
                               SizedBox(height: getHeight(10)),
-                              Text('Pembayaran tiket Anda belum selesai.')
+                              const Text('Pembayaran tiket Anda belum selesai.')
                             ]),
                             actions: [
                               CupertinoDialogAction(
-                                child: Text(
+                                child: const Text(
                                   'Selesaikan',
                                   style: TextStyle(
                                       color: kPrimaryColor,
@@ -143,7 +143,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                                 },
                               ),
                               CupertinoDialogAction(
-                                child: Text(
+                                child: const Text(
                                   'Keluar',
                                   style: TextStyle(
                                       color: kRedColor,
@@ -161,11 +161,11 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                           );
                         });
               },
-              icon: Icon(
+              icon: const Icon(
                 CupertinoIcons.left_chevron,
                 color: kWhiteColor,
               )),
-          title: Text(
+          title: const Text(
             'Pembayaran Non Tunai',
             style: TextStyle(color: kWhiteColor),
           ),
@@ -175,7 +175,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
         body: SafeArea(
           child: _controllerSnapMidtrans != null
               ? WebViewWidget(controller: _controllerSnapMidtrans!)
-              : CircularProgressIndicator(),
+              : const CircularProgressIndicator(),
         ));
   }
 }

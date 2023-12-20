@@ -57,11 +57,11 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
                               width: getWidth(200))),
                       SizedBox(height: getHeight(50)),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
                           controller: _controllerNama,
                           keyboardType: TextInputType.name,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'Nama Lengkap',
                             hintText: 'Masukkan nama lengkap anda',
                             suffixIcon: Icon(CupertinoIcons.person),
@@ -79,11 +79,11 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
                       ),
                       SizedBox(height: getHeight(30)),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
                           controller: _controllerTelepon,
                           keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'No Telepon',
                             hintText: 'Masukkan no telepon anda',
                             suffixIcon:
@@ -102,11 +102,11 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
                       ),
                       SizedBox(height: getHeight(30)),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
                           controller: _controllerEmail,
                           keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             labelText: 'E-mail',
                             hintText: 'Masukkan e-mail anda',
                             suffixIcon: Icon(CupertinoIcons.mail),
@@ -125,7 +125,7 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
                       ),
                       SizedBox(height: getHeight(30)),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: TextField(
                           controller: _controllerKatasandi,
                           keyboardType: TextInputType.visiblePassword,
@@ -159,7 +159,7 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
                             top: getHeight(20), bottom: getHeight(10)),
                         child: Text(
                           textMessage ?? '',
-                          style: TextStyle(color: kRedColor),
+                          style: const TextStyle(color: kRedColor),
                         ),
                       )
                     ],
@@ -170,7 +170,7 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
               Container(
                 width: double.infinity,
                 height: 50,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ElevatedButton(
                   onPressed: (isNama && isTelepon && isEmail && isKatasandi)
                       ? () {
@@ -198,7 +198,7 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
                       : null,
                   style:
                       ElevatedButton.styleFrom(backgroundColor: kPrimaryColor),
-                  child: Text(
+                  child: const Text(
                     'Daftar',
                     style: TextStyle(
                         color: kWhiteColor, fontWeight: FontWeight.bold),
@@ -209,14 +209,14 @@ class _RegistrasiScreenState extends State<RegistrasiScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Sudah Punya Akun? ',
+                  const Text('Sudah Punya Akun? ',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => const LoginScreen()));
                       },
-                      child: Text('Masuk Di Sini',
+                      child: const Text('Masuk Di Sini',
                           style: TextStyle(
                               color: kPrimaryColor,
                               fontWeight: FontWeight.bold)))

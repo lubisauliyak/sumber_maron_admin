@@ -27,9 +27,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    var _pilihScreen = widget.pilihScreen;
-    if (_pilihScreen != null) {
-      _onTapNavbar(_pilihScreen);
+    if (widget.pilihScreen != null) {
+      _onTapNavbar(widget.pilihScreen ?? 0);
     }
     super.initState();
   }
@@ -41,9 +40,9 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   List<Widget> screen = [
-    BerandaScreen(),
-    RiwayatScreen(),
-    AkunScreen(),
+    const BerandaScreen(),
+    const RiwayatScreen(),
+    const AkunScreen(),
   ];
 
   @override
@@ -114,7 +113,8 @@ class _BerandaScreenState extends State<BerandaScreen> {
                         bottom:
                             Radius.elliptical(getHeight(200), getHeight(50))),
                     image: DecorationImage(
-                        image: AssetImage('assets/images/bg_sumbermaron.jpg'),
+                        image: const AssetImage(
+                            'assets/images/bg_sumbermaron.jpg'),
                         fit: BoxFit.cover,
                         colorFilter: ColorFilter.mode(
                             kPrimaryColor.withOpacity(.8),
@@ -142,7 +142,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                                 color: kGreyColor.withOpacity(0.2),
                                 spreadRadius: 1,
                                 blurRadius: 5,
-                                offset: Offset(0, 0),
+                                offset: const Offset(0, 0),
                               ),
                             ],
                           ),
@@ -158,7 +158,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                                 ),
                               ),
                               SizedBox(height: getHeight(10)),
-                              Text('Pesan Tiket')
+                              const Text('Pesan Tiket')
                             ],
                           )),
                     ),
@@ -179,7 +179,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                                   color: kGreyColor.withOpacity(0.2),
                                   spreadRadius: 1,
                                   blurRadius: 5,
-                                  offset: Offset(0, 0),
+                                  offset: const Offset(0, 0),
                                 ),
                               ],
                             ),
@@ -194,7 +194,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                                 ),
                               ),
                               SizedBox(height: getHeight(10)),
-                              Text('Lokasi Parkir')
+                              const Text('Lokasi Parkir')
                             ]))),
                   ]))
             ])),
@@ -211,7 +211,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
               Container(
                   padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                   alignment: Alignment.centerLeft,
-                  child: Text('Info dan Promo Spesial',
+                  child: const Text('Info dan Promo Spesial',
                       style: TextStyle(fontWeight: FontWeight.bold))),
               CarouselSlider(
                 items: dataBanner
@@ -260,7 +260,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                       child: Container(
                           width: _currentBanner == entry.key ? 20 : 10,
                           height: 10,
-                          margin: EdgeInsets.symmetric(horizontal: 5),
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
                           decoration: BoxDecoration(
                               color: kPrimaryColor.withOpacity(
                                   _currentBanner == entry.key ? 0.9 : 0.2),
@@ -274,7 +274,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
               Container(
                   padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                   alignment: Alignment.centerLeft,
-                  child: Text('Lokasi Sumber Maron',
+                  child: const Text('Lokasi Sumber Maron',
                       style: TextStyle(fontWeight: FontWeight.bold))),
               SizedBox(height: getHeight(15)),
               Container(
@@ -284,7 +284,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                   child: Container(
                     height: getHeight(200),
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage('assets/images/smpeta.jpg')),
                       borderRadius: BorderRadius.circular(20),
@@ -293,7 +293,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                           color: kGreyColor.withOpacity(.2),
                           blurRadius: 1,
                           spreadRadius: 1,
-                          offset: Offset(0, 0),
+                          offset: const Offset(0, 0),
                         )
                       ],
                     ),

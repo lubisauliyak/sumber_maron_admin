@@ -48,20 +48,20 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
             onPressed: () {
               if (widget.fromPesanTiket ?? false) {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => MainScreen(pilihScreen: 1)));
+                    builder: (context) => const MainScreen(pilihScreen: 1)));
               } else if (widget.fromSnapMidtrans ?? false) {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => MainScreen(pilihScreen: 1)));
+                    builder: (context) => const MainScreen(pilihScreen: 1)));
               } else {
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => MainScreen(pilihScreen: 1)));
+                    builder: (context) => const MainScreen(pilihScreen: 1)));
               }
             },
-            icon: Icon(
+            icon: const Icon(
               CupertinoIcons.left_chevron,
               color: kWhiteColor,
             )),
-        title: Text(
+        title: const Text(
           'Tiket Aktif Pengunjung',
           style: TextStyle(color: kWhiteColor),
         ),
@@ -110,7 +110,7 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                     color: kGreyColor.withOpacity(0.2),
                     spreadRadius: 1,
                     blurRadius: 1,
-                    offset: Offset(0, 0),
+                    offset: const Offset(0, 0),
                   ),
                 ],
               ),
@@ -122,26 +122,27 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                       ? Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 10),
                               decoration: BoxDecoration(
                                   color: kOrangeColor.withOpacity(.15),
                                   borderRadius: BorderRadius.circular(20)),
                               child: Row(
                                 children: [
-                                  Icon(CupertinoIcons.stopwatch,
+                                  const Icon(CupertinoIcons.stopwatch,
                                       color: kOrangeColor),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('Selesaikan pembayaran sebelum',
+                                      const Text(
+                                          'Selesaikan pembayaran sebelum',
                                           style:
                                               TextStyle(color: kOrangeColor)),
                                       Text(
-                                        '00:00 ${formatTanggalIndonesia(DateFormat('yyyy-MM-dd').format(DateTime.parse(tanggalPesan).add(Duration(days: 1))))}',
-                                        style: TextStyle(
+                                        '00:00 ${formatTanggalIndonesia(DateFormat('yyyy-MM-dd').format(DateTime.parse(tanggalPesan).add(const Duration(days: 1))))}',
+                                        style: const TextStyle(
                                             color: kOrangeColor,
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -150,27 +151,27 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 15),
+                            const SizedBox(height: 15),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Total yang harus dibayar',
+                                const Text('Total yang harus dibayar',
                                     style: TextStyle(color: kGreyColor)),
                                 Text(formatRupiah(totalBayar),
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold))
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold))
                               ],
                             ),
-                            SizedBox(height: 15),
+                            const SizedBox(height: 15),
                             Container(height: 1, color: kGreyColor),
-                            SizedBox(height: 15),
-                            Container(
+                            const SizedBox(height: 15),
+                            SizedBox(
                               // padding: EdgeInsets.symmetric(horizontal: 20),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
+                                  const Row(
                                     children: [
                                       Icon(
                                         CupertinoIcons.device_phone_portrait,
@@ -190,6 +191,8 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                       HttpApi.recreatePayment(idTiket)
                                           .then((value) {
                                         dataResponse = value;
+                                        print(dataResponse.textMessage);
+
                                         if (dataResponse.textMessage ==
                                             'Pembayaran ulang berhasil') {
                                           var linkPayment = dataResponse
@@ -208,13 +211,13 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                       });
                                     },
                                     child: Container(
-                                      padding: EdgeInsets.symmetric(
+                                      padding: const EdgeInsets.symmetric(
                                           horizontal: 15, vertical: 10),
                                       decoration: BoxDecoration(
                                           color: kPrimaryColor,
                                           borderRadius:
                                               BorderRadius.circular(10)),
-                                      child: Text('Bayar Sekarang',
+                                      child: const Text('Bayar Sekarang',
                                           style: TextStyle(
                                               color: kWhiteColor,
                                               fontWeight: FontWeight.bold)),
@@ -223,39 +226,42 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 15),
+                            const SizedBox(height: 15),
                             Container(height: 1, color: kGreyColor),
-                            SizedBox(height: 15),
+                            const SizedBox(height: 15),
                           ],
                         )
-                      : SizedBox(width: 0),
-                  Container(
+                      : const SizedBox(width: 0),
+                  SizedBox(
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Tiket Wisata Sumber Maron',
                           style: TextStyle(
                               color: kPrimaryColor,
                               fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: getHeight(15)),
-                        Text('Nama Pemesan',
+                        const Text('Nama Pemesan',
                             style: TextStyle(color: kGreyColor)),
                         SizedBox(height: getHeight(3)),
                         Text(dataPengguna['nama'],
-                            style: TextStyle(fontWeight: FontWeight.bold)),
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold)),
                         SizedBox(height: getHeight(15)),
-                        Text('Tanggal', style: TextStyle(color: kGreyColor)),
-                        SizedBox(height: getHeight(3)),
-                        Text(formatTanggalIndonesia(tanggalBooking),
-                            style: TextStyle(fontWeight: FontWeight.bold)),
-                        SizedBox(height: getHeight(15)),
-                        Text('Jam Operasional',
+                        const Text('Tanggal',
                             style: TextStyle(color: kGreyColor)),
                         SizedBox(height: getHeight(3)),
-                        Text('08:00-17:00 WIB',
+                        Text(formatTanggalIndonesia(tanggalBooking),
+                            style:
+                                const TextStyle(fontWeight: FontWeight.bold)),
+                        SizedBox(height: getHeight(15)),
+                        const Text('Jam Operasional',
+                            style: TextStyle(color: kGreyColor)),
+                        SizedBox(height: getHeight(3)),
+                        const Text('08:00-17:00 WIB',
                             style: TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),
@@ -268,19 +274,19 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(height: getHeight(15)),
-                                Text('Jumlah Pengunjung',
+                                const Text('Jumlah Pengunjung',
                                     style: TextStyle(color: kGreyColor)),
                                 SizedBox(height: getHeight(3)),
                                 Text('$jumlahPengunjung Orang',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
                                 SizedBox(height: getHeight(15)),
-                                Text('Jumlah Tiket',
+                                const Text('Jumlah Tiket',
                                     style: TextStyle(color: kGreyColor)),
                                 SizedBox(height: getHeight(3)),
                                 Text('$jumlahTiket Tiket',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold)),
                               ]),
                         )
                       : Column(
@@ -294,22 +300,22 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Jumlah Pengunjung',
+                                    const Text('Jumlah Pengunjung',
                                         style: TextStyle(color: kGreyColor)),
                                     SizedBox(height: getHeight(3)),
                                     Text('$jumlahPengunjung Orang',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ],
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text('Jumlah Tiket',
+                                    const Text('Jumlah Tiket',
                                         style: TextStyle(color: kGreyColor)),
                                     SizedBox(height: getHeight(3)),
                                     Text('$jumlahTiket Tiket',
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ],
                                 )
@@ -322,22 +328,22 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text('Metode Pembayaran',
+                                    const Text('Metode Pembayaran',
                                         style: TextStyle(color: kGreyColor)),
                                     SizedBox(height: getHeight(3)),
                                     Text(metodeBayar,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ],
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text('Total Bayar',
+                                    const Text('Total Bayar',
                                         style: TextStyle(color: kGreyColor)),
                                     SizedBox(height: getHeight(3)),
                                     Text(formatRupiah(totalBayar),
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold)),
                                   ],
                                 )
@@ -353,7 +359,7 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                             SizedBox(height: getHeight(15)),
                             Container(height: 1, color: kGreyColor),
                             SizedBox(height: getHeight(15)),
-                            Text(
+                            const Text(
                               'Pindai Kode ini di Loket Pembayaran',
                               style: TextStyle(
                                   color: kPrimaryColor,
@@ -368,7 +374,7 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                             SizedBox(height: getHeight(10)),
                             Text(widget.dataTiket['kodeEt']),
                             SizedBox(height: getHeight(15)),
-                            Column(
+                            const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -415,7 +421,7 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                             ),
                           ],
                         )
-                      : SizedBox(width: 0),
+                      : const SizedBox(width: 0),
                   SizedBox(height: getHeight(20)),
                 ],
               ),

@@ -60,7 +60,7 @@ class _TiketAktifState extends State<TiketAktif> {
         ? Column(
             children: [
               SizedBox(height: getHeight(30)),
-              Icon(CupertinoIcons.slash_circle),
+              const Icon(CupertinoIcons.slash_circle),
               SizedBox(height: getHeight(10)),
               Text(textMessage),
             ],
@@ -106,7 +106,7 @@ class TiketAktifItem extends StatelessWidget {
                   color: statusBorderColor[statusBayar].withOpacity(.2),
                   spreadRadius: 1,
                   blurRadius: 2,
-                  offset: Offset(0, 0))
+                  offset: const Offset(0, 0))
             ],
           ),
           child: Column(
@@ -125,7 +125,7 @@ class TiketAktifItem extends StatelessWidget {
                       ),
                       Text(
                         formatTanggalIndonesia(tanggalBooking),
-                        style: TextStyle(fontSize: 11),
+                        style: const TextStyle(fontSize: 11),
                       )
                     ],
                   ),
@@ -157,11 +157,11 @@ class TiketAktifItem extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Jumlah Pengunjung:'),
+                      const Text('Jumlah Pengunjung:'),
                       SizedBox(height: getHeight(5)),
                       Text(
                         '$jumlahPengunjung Orang',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: kPrimaryColor, fontWeight: FontWeight.bold),
                       )
                     ],
@@ -169,11 +169,11 @@ class TiketAktifItem extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text('Total Bayar:'),
+                      const Text('Total Bayar:'),
                       SizedBox(height: getHeight(5)),
                       Text(
                         formatRupiah(totalBayar),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: kPrimaryColor, fontWeight: FontWeight.bold),
                       )
                     ],

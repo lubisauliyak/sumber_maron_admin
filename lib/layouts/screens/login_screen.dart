@@ -50,11 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: getWidth(200))),
                     SizedBox(height: getHeight(50)),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextField(
                         controller: _controllerEmail,
                         keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'E-mail',
                           hintText: 'Masukkan e-mail anda',
                           suffixIcon: Icon(CupertinoIcons.mail),
@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: getHeight(30)),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextField(
                         controller: _controllerKatasandi,
                         keyboardType: TextInputType.visiblePassword,
@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           top: getHeight(20), bottom: getHeight(10)),
                       child: Text(
                         textMessage ?? '',
-                        style: TextStyle(color: kRedColor),
+                        style: const TextStyle(color: kRedColor),
                       ),
                     )
                   ],
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 width: double.infinity,
                 height: 50,
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ElevatedButton(
                   onPressed: (isEmail && isKatasandi)
                       ? () {
@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       : null,
                   style:
                       ElevatedButton.styleFrom(backgroundColor: kPrimaryColor),
-                  child: Text(
+                  child: const Text(
                     'Masuk',
                     style: TextStyle(
                         color: kWhiteColor, fontWeight: FontWeight.bold),
@@ -151,14 +151,14 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Belum Punya Akun? ',
+                  const Text('Belum Punya Akun? ',
                       style: TextStyle(fontWeight: FontWeight.bold)),
                   GestureDetector(
                       onTap: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => const RegistrasiScreen()));
                       },
-                      child: Text('Daftar Di Sini',
+                      child: const Text('Daftar Di Sini',
                           style: TextStyle(
                               color: kPrimaryColor,
                               fontWeight: FontWeight.bold)))
