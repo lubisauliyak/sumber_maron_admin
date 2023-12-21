@@ -39,8 +39,8 @@ class _TiketAktifState extends State<TiketAktif> {
     HttpApi.tiketAktif().then((value) {
       dataResponse = value;
       if (dataResponse.textMessage == 'Data tiket aktif ditemukan') {
+        data = muatTiketAktif();
         setState(() {
-          data = muatTiketAktif();
           dataTiketAktif = data;
           isEmptyTiketAktif = false;
         });

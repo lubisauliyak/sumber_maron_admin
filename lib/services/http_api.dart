@@ -37,15 +37,11 @@ class HttpApi {
       List<dynamic> dataBanner = data['dataBanner'];
       List<dynamic> dataHariLibur = data['dataHariLibur'];
       Map<String, dynamic> dataLokasiParkir = data['dataLokasiParkir'];
-      List<dynamic> dataTiketAktif = data['dataTiketAktif'];
-      List<dynamic> dataRiwayatTiket = data['dataRiwayatTiket'];
 
       simpanAkun(dataPengguna);
       simpanBanner(dataBanner);
       simpanHariLibur(dataHariLibur);
       simpanLokasiParkir(dataLokasiParkir);
-      simpanTiketAktif(dataTiketAktif);
-      simpanRiwayatTiket(dataRiwayatTiket);
     }
 
     return HttpApi(
@@ -288,9 +284,6 @@ class HttpApi {
     if (textMessage == 'Data tiket aktif ditemukan') {
       List<dynamic> dataTiketAktif = data['dataTiket'];
       simpanTiketAktif(dataTiketAktif);
-    } else if (textMessage == 'Data tiket aktif belum ada') {
-      List<dynamic> dataTiketAktif = [];
-      simpanTiketAktif(dataTiketAktif);
     }
 
     return HttpApi(
@@ -317,9 +310,6 @@ class HttpApi {
     String textMessage = data['textMessage'];
     if (textMessage == 'Data riwayat tiket ditemukan') {
       List<dynamic> dataRiwayatTiket = data['dataTiket'];
-      simpanRiwayatTiket(dataRiwayatTiket);
-    } else if (textMessage == 'Data riwayat tiket belum ada') {
-      List<dynamic> dataRiwayatTiket = [];
       simpanRiwayatTiket(dataRiwayatTiket);
     }
 

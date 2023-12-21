@@ -126,6 +126,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               .then((value) {
                             dataResponse = value;
                             if (dataResponse.textMessage == 'Login berhasil') {
+                              HttpApi.tiketAktif();
+                              HttpApi.riwayatTiket();
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
                                       builder: (context) =>
