@@ -52,7 +52,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                       desc:
                           'Maaf, pembayaran Anda gagal diselesaikan dan belum diterima.',
                       btnOkOnPress: () {
-                        Navigator.of(context).pop();
+                        // Navigator.of(context).pop();
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) =>
                                 const MainScreen(pilihScreen: 1)));
@@ -79,7 +79,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                       desc:
                           'Selamat, pembayaran Anda berhasil dilakukan dan telah diterima.',
                       btnOkOnPress: () {
-                        Navigator.of(context).pop();
+                        // Navigator.of(context).pop();
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) =>
                                 DetailTiketAktif(dataTiket: dataTiket)));

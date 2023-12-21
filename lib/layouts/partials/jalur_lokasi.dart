@@ -77,7 +77,7 @@ class _JalurLokasiState extends State<JalurLokasi> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Pilih Transaportasi'),
+                const Text('Pilih Transportasi'),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [

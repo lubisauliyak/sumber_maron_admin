@@ -225,7 +225,7 @@ class _AkunScreenState extends State<AkunScreen> {
                                   child: const Text(
                                     'Batalkan',
                                     style: TextStyle(
-                                        color: kBlackColor,
+                                        color: kPrimaryColor,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   onPressed: () {

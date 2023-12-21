@@ -180,14 +180,12 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
                                           .then((value) {
                                         dataResponse = value;
                                         print(dataResponse.textMessage);
-
                                         if (dataResponse.textMessage ==
                                             'Pembayaran ulang berhasil') {
                                           var linkPayment = dataResponse
                                               .bodyResponse!['dataPayment']
                                                   ['linkPayment']
                                               .toString();
-
                                           Navigator.of(context).pushReplacement(
                                               MaterialPageRoute(
                                                   builder: (context) =>
