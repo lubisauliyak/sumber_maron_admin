@@ -27,7 +27,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void initState() {
-    if (widget.pilihScreen != null) {
+    if (widget.pilihScreen != null && widget.pilihScreen != 0) {
       _onTapNavbar(widget.pilihScreen ?? 0);
     }
     super.initState();
@@ -194,7 +194,7 @@ class _BerandaScreenState extends State<BerandaScreen> {
                                 ),
                               ),
                               SizedBox(height: getHeight(10)),
-                              const Text('Lokasi Parkir')
+                              const Text('Jalur Lokasi')
                             ]))),
                   ]))
             ])),

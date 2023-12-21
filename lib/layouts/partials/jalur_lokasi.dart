@@ -62,7 +62,7 @@ class _JalurLokasiState extends State<JalurLokasi> {
               color: kWhiteColor,
             )),
         title: const Text(
-          'Info Lokasi Parkir',
+          'Info Jalur Lokasi',
           style: TextStyle(color: kWhiteColor),
         ),
         centerTitle: true,

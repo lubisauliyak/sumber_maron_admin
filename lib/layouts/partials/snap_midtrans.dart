@@ -52,6 +52,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                       desc:
                           'Maaf, pembayaran Anda gagal diselesaikan dan belum diterima.',
                       btnOkOnPress: () {
+                        Navigator.of(context).pop();
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) =>
                                 const MainScreen(pilihScreen: 1)));
@@ -78,9 +79,10 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                       desc:
                           'Selamat, pembayaran Anda berhasil dilakukan dan telah diterima.',
                       btnOkOnPress: () {
+                        Navigator.of(context).pop();
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => DetailTiketAktif(
-                                dataTiket: dataTiket, fromSnapMidtrans: true)));
+                            builder: (context) =>
+                                DetailTiketAktif(dataTiket: dataTiket)));
                       },
                       btnOkColor: kPrimaryColor,
                       btnOkText: 'Tutup')
@@ -111,7 +113,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
               onPressed: () {
                 isFinished
                     ? Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (context) => const MainScreen(pilihScreen: 1)))
+                        builder: (context) => const MainScreen()))
                     : showDialog(
                         context: context,
                         builder: (BuildContext context) {
@@ -150,6 +152,7 @@ class _SnapMidtransState extends State<SnapMidtrans> {
                                       fontWeight: FontWeight.bold),
                                 ),
                                 onPressed: () {
+                                  Navigator.of(context).pop();
                                   Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>

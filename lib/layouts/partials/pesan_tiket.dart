@@ -152,6 +152,7 @@ class _PesanTiketState extends State<PesanTiket> {
                                   fontWeight: FontWeight.bold),
                             ),
                             onPressed: () {
+                              Navigator.of(context).pop();
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
                                       builder: (context) =>
@@ -317,7 +318,8 @@ class _PesanTiketState extends State<PesanTiket> {
                         top: getHeight(3), bottom: getHeight(15)),
                     padding: EdgeInsets.symmetric(horizontal: getWidth(20)),
                     child: Text(pesanInputTiket,
-                        style: const TextStyle(fontSize: sizeDescription)))
+                        style: const TextStyle(
+                            color: kRedColor, fontSize: sizeDescription)))
                 : SizedBox(
                     height: getHeight(30),
                   ),
@@ -491,13 +493,13 @@ class _PesanTiketState extends State<PesanTiket> {
                                           Map<String, dynamic> dataTiket =
                                               dataResponse
                                                   .bodyResponse!['dataTiket'];
+                                          Navigator.of(context).pop();
                                           Navigator.of(context).pushReplacement(
                                               MaterialPageRoute(
                                                   builder: (context) =>
                                                       DetailTiketAktif(
-                                                          dataTiket: dataTiket,
-                                                          fromPesanTiket:
-                                                              true)));
+                                                          dataTiket:
+                                                              dataTiket)));
                                         } else if (dataResponse.textMessage ==
                                             'Menunggu pembayaran Non Tunai') {
                                           var idTiket = dataResponse
@@ -508,6 +510,7 @@ class _PesanTiketState extends State<PesanTiket> {
                                               .bodyResponse!['dataPayment']
                                                   ['linkPayment']
                                               .toString();
+                                          Navigator.of(context).pop();
                                           Navigator.of(context).pushReplacement(
                                               MaterialPageRoute(
                                                   builder: (context) =>
@@ -556,6 +559,8 @@ class _PesanTiketState extends State<PesanTiket> {
                                                                     .bold),
                                                       ),
                                                       onPressed: () {
+                                                        Navigator.of(context)
+                                                            .pop();
                                                         Navigator.of(context).pushReplacement(
                                                             MaterialPageRoute(
                                                                 builder: (context) =>

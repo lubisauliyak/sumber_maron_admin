@@ -15,13 +15,9 @@ class DetailTiketAktif extends StatefulWidget {
   const DetailTiketAktif({
     Key? key,
     required this.dataTiket,
-    this.fromPesanTiket,
-    this.fromSnapMidtrans,
   }) : super(key: key);
 
   final Map<String, dynamic> dataTiket;
-  final bool? fromPesanTiket;
-  final bool? fromSnapMidtrans;
 
   @override
   State<DetailTiketAktif> createState() => _DetailTiketAktifState();
@@ -46,16 +42,8 @@ class _DetailTiketAktifState extends State<DetailTiketAktif> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              if (widget.fromPesanTiket ?? false) {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const MainScreen(pilihScreen: 1)));
-              } else if (widget.fromSnapMidtrans ?? false) {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const MainScreen(pilihScreen: 1)));
-              } else {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => const MainScreen(pilihScreen: 1)));
-              }
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const MainScreen(pilihScreen: 1)));
             },
             icon: const Icon(
               CupertinoIcons.left_chevron,

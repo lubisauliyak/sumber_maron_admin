@@ -5,7 +5,6 @@ final Map<String, dynamic> statusBorderColor = {
   'Lunas': kGreenColor,
   'Belum Lunas': kRedColor,
   'Menunggu Pembayaran': kOrangeColor,
-  'Berhasil': kGreenColor,
   'Dibatalkan Sistem': kRedColor,
 };
 
@@ -13,7 +12,6 @@ final Map<String, dynamic> statusTextColor = {
   'Lunas': kGreenColor,
   'Belum Lunas': kRedColor,
   'Menunggu Pembayaran': kOrangeColor,
-  'Berhasil': kGreenColor,
   'Dibatalkan Sistem': kRedColor,
 };
 
