@@ -3,11 +3,12 @@
 Admin Sumber Maron: Encrypted QR code based visitor ticket exchange application, viewing information on the number of visitors and ticket income.
 
 Link Github "Visitors Sumber Maron" : https://github.com/megaputri19/sumber_maron
+
 Link Applications Guideline : https://drive.google.com/file/d/17mHOKfhuOQ5C3D54Rej1HKvQU4pF6Cz-
 
 Splash screen:
 
-![image](https://github.com/lubisauliyak/sumber_maron_admin/assets/81324120/f143457d-cfed-469b-b785-5a9802c9a1b8)
+![image](https://github.com/lubisauliyak/sumber_maron_admin/assets/81324120/f143457d-cfed-469b-b785-5a9802c9a1b8 =100x)
 
 Login screen:
 
